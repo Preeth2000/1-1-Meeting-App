@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "92413252669",
+    "project_id": "videocallapp-afe4e",
+    "storage_bucket": "videocallapp-afe4e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:92413252669:android:c40c2cb49f25ea6b820654",
+        "android_client_info": {
+          "package_name": "com.example.videocallapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "92413252669-if7i3tfda6k9j1ojm2am6lstcuo7gaqn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCzyO7FA4I--S0GdV-_Vx96QCP8wOMVIU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "92413252669-if7i3tfda6k9j1ojm2am6lstcuo7gaqn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
