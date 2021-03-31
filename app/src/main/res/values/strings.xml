@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">VideoCallApp</string>
+    <string name="welcome">Welcome to</string>
+    <string name="sign_in">Sign in</string>
+    <string name="email">Email</string>
+    <string name="exampleemail">john_smith@example.com</string>
+    <string name="password">Password</string>
+    <string name="examplepassword">password123</string>
+    <string name="registertext">Click here to Register Account</string>
+    <string name="signupbutton">SignUp</string>
+    <string name="registerheader">Register an Account</string>
+    <string name="enter_details_below">Enter Details Below</string>
+    <string name="firstname">First Name</string>
+    <string name="examplefirstname">John</string>
+    <string name="lastname">Last Name</string>
+    <string name="examplelastname">Smith</string>
+    <string name="re_password">Re-enter Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="signintext">Already have an Account</string>
+</resources>
