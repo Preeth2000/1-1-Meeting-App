@@ -1,0 +1,33 @@
+package com.example.videocallapp.firebase;
+
+import android.util.Log;
+
+import androidx.annotation.NonNull;
+
+import com.google.firebase.messaging.FirebaseMessagingService;
+import com.google.firebase.messaging.RemoteMessage;
+
+public class MessagingService extends FirebaseMessagingService {
+
+    @Override
+    public void onNewToken(@NonNull String token) {
+        super.onNewToken(token);
+        //Output firebase token to Log
+        /*
+        Log.d("FCM", "Token: " + token);
+         */
+    }
+
+    @Override
+    public void onMessageReceived(@NonNull RemoteMessage remoteMessage) {
+        super.onMessageReceived(remoteMessage);
+        //Output whether remote messaging with firebase is successful to Log
+        /*
+        if(remoteMessage.getNotification() != null) {
+            Log.d("FCM", "Remote Message Recieved " + remoteMessage.getNotification().getBody());
+        }
+
+         */
+
+    }
+}
