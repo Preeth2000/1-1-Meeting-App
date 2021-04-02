@@ -27,8 +27,13 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.InstanceIdResult;
 
+import org.jitsi.meet.sdk.JitsiMeetActivity;
+import org.jitsi.meet.sdk.JitsiMeetConferenceOptions;
 import org.json.JSONArray;
 import org.json.JSONObject;
+
+import java.net.URL;
+import java.util.UUID;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -38,6 +43,7 @@ public class Send_Invite extends AppCompatActivity {
 
     private PreferenceManager preferenceManager;
     private String invitertoken = null;
+    String meeting = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -109,6 +115,9 @@ public class Send_Invite extends AppCompatActivity {
             data.put(Constants.KEY_EMAIL, preferenceManager.getString(Constants.KEY_EMAIL));
             data.put(Constants.REMOTE_MSG_INVITER_TOKEN, invitertoken);
 
+            meeting = preferenceManager.getString(Constants.KEY_USER_ID) + "_" + UUID.randomUUID().toString().substring(0,5);
+            data.put(Constants.REMOTE_MSG_MEETING, meeting);
+
             body.put(Constants.REMOTE_MSG_DATA, data);
             body.put(Constants.REMOTE_MSG_REGISTRATION_IDS, tokens);
 
@@ -173,7 +182,15 @@ public class Send_Invite extends AppCompatActivity {
              String type = intent.getStringExtra(Constants.REMOTE_MSG_INVITATION_RESPONSE);
              if(type != null){
                  if(type.equals(Constants.REMOTE_MSG_INVITATION_ACCEPTED)){
-                     Toast.makeText(context, "Call Accepted", Toast.LENGTH_SHORT).show();
+                     try{
+                         URL serverURL = new URL("https://meet.jit.si");
+                         JitsiMeetConferenceOptions conferenceOptions = new JitsiMeetConferenceOptions.Builder().setServerURL(serverURL).setWelcomePageEnabled(false).setRoom(getIntent().getStringExtra(Constants.REMOTE_MSG_MEETING)).build();
+                         JitsiMeetActivity.launch(Send_Invite.this, conferenceOptions);
+                         finish();
+                     }catch (Exception exception){
+                         Toast.makeText(Send_Invite.this, exception.getMessage(), Toast.LENGTH_SHORT).show();
+                         finish();
+                     }
                  }else if(type.equals(Constants.REMOTE_MSG_INVITATION_REJECTED)){
                      Toast.makeText(context, "Call Rejected", Toast.LENGTH_SHORT).show();
                      finish();
