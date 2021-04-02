@@ -190,6 +190,7 @@ public class MainActivity extends AppCompatActivity implements UserListener {
         }else {
             Toast.makeText(this, "Starting Video Call with" + user.firstname + "" + user.lastname, Toast.LENGTH_SHORT).show();
 
+
         }
     }
 
@@ -199,7 +200,10 @@ public class MainActivity extends AppCompatActivity implements UserListener {
             Toast.makeText(this, user.firstname + " " + user.lastname + "is unavailable", Toast.LENGTH_SHORT).show();
         }else {
             Toast.makeText(this, "Starting Call with " + user.firstname + "" + user.lastname, Toast.LENGTH_SHORT).show();
-
+            Intent intent = new Intent(getApplicationContext(), Send_Invite.class);
+            intent.putExtra("user", user);
+            intent.putExtra("type", "video");
+            startActivity(intent);
         }
     }
 }
