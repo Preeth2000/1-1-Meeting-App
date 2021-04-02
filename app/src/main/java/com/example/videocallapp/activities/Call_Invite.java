@@ -20,8 +20,12 @@ import com.example.videocallapp.network.APIClient;
 import com.example.videocallapp.network.APIService;
 import com.example.videocallapp.utilities.Constants;
 
+import org.jitsi.meet.sdk.JitsiMeetActivity;
+import org.jitsi.meet.sdk.JitsiMeetConferenceOptions;
 import org.json.JSONArray;
 import org.json.JSONObject;
+
+import java.net.URL;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -103,14 +107,24 @@ public class Call_Invite extends AppCompatActivity {
             public void onResponse(@NonNull Call<String> call, @NonNull Response<String> response) {
                 if(response.isSuccessful()){
                     if(type.equals(Constants.REMOTE_MSG_INVITATION_ACCEPTED)){
-                        Toast.makeText(Call_Invite.this, "Call Accepted", Toast.LENGTH_SHORT).show();
+                        try{
+                            URL serverURL = new URL("https://meet.jit.si");
+                            JitsiMeetConferenceOptions conferenceOptions = new JitsiMeetConferenceOptions.Builder().setServerURL(serverURL).setWelcomePageEnabled(false).setRoom(getIntent().getStringExtra(Constants.REMOTE_MSG_MEETING)).build();
+                            JitsiMeetActivity.launch(Call_Invite.this, conferenceOptions);
+                            finish();
+                        }catch (Exception exception){
+                            Toast.makeText(Call_Invite.this, exception.getMessage(), Toast.LENGTH_SHORT).show();
+                            finish();
+                        }
                     }else {
-                        Toast.makeText(Call_Invite.this, "Call Accepted", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Call_Invite.this, "Call Rejected", Toast.LENGTH_SHORT).show();
+                        finish();
                     }
                 }else{
                     Toast.makeText(Call_Invite.this, response.message(), Toast.LENGTH_SHORT).show();
+                    finish();
                 }
-                finish();
+
             }
 
             @Override
