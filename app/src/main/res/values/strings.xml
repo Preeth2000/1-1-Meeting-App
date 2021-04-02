@@ -18,4 +18,6 @@
     <string name="sign_up">Sign Up</string>
     <string name="signintext">Already have an Account</string>
     <string name="sign_out">Sign Out</string>
+    <string name="incoming_call">Incoming Call</string>
+    <string name="calling">Calling</string>
 </resources>
