@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.videocallapp"
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -54,4 +54,5 @@ dependencies {
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
     implementation 'com.google.firebase:firebase-messaging:20.1.0'
     implementation 'com.google.firebase:firebase-firestore:21.4.0'
+    implementation ('org.jitsi.react:jitsi-meet-sdk:2.8.2') { transitive = true }
 }
