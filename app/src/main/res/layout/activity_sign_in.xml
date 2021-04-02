@@ -83,7 +83,7 @@
                     android:textSize="@dimen/_11ssp"/>
 
                 <EditText
-                    android:id="@+id/inputemail"
+                    android:id="@+id/inputEmailsignin"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_30sdp"
                     android:layout_marginStart="@dimen/_8sdp"
@@ -99,6 +99,7 @@
                     android:textColorHint="@color/hinttext"
                     android:textSize="@dimen/_13ssp"/>
 
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -112,7 +113,7 @@
                     android:textSize="@dimen/_11ssp"/>
 
                 <EditText
-                    android:id="@+id/inputpassword"
+                    android:id="@+id/inputPasswordsignin"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_30sdp"
                     android:layout_marginStart="@dimen/_8sdp"

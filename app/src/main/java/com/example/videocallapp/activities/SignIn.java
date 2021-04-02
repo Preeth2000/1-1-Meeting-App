@@ -77,8 +77,8 @@ public class SignIn extends AppCompatActivity {
 
          */
 
-        inputEmail    = findViewById(R.id.inputEmail);
-        inputPassword = findViewById(R.id.inputPassword);
+        inputEmail    = findViewById(R.id.inputEmailsignin);
+        inputPassword = findViewById(R.id.inputPasswordsignin);
         buttonSignIn  = findViewById(R.id.signinbutton);
         signinprogress = findViewById(R.id.signinprogress);
 
@@ -108,26 +108,22 @@ public class SignIn extends AppCompatActivity {
                 .whereEqualTo(Constants.KEY_EMAIL, inputEmail.getText().toString())
                 .whereEqualTo(Constants.KEY_PASSWORD, inputPassword.getText().toString())
                 .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful() && task.getResult() != null && task.getResult().getDocuments().size() > 0) {
-                            DocumentSnapshot documentSnapshot = task.getResult().getDocuments().get(0);
-                            preferenceManager.putBoolean(Constants.KEY_IS_SIGNED_IN, true);
-                            preferenceManager.putString(Constants.KEY_USER_ID, documentSnapshot.getId());
-                            preferenceManager.putString(Constants.KEY_FIRST_NAME, documentSnapshot.getString(Constants.KEY_FIRST_NAME));
-                            preferenceManager.putString(Constants.KEY_LAST_NAME, documentSnapshot.getString(Constants.KEY_LAST_NAME));
-                            preferenceManager.putString(Constants.KEY_EMAIL, documentSnapshot.getString(Constants.KEY_EMAIL));
-                            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                            startActivity(intent);
-                        } else {
-                            signinprogress.setVisibility(View.INVISIBLE);
-                            buttonSignIn.setVisibility(View.VISIBLE);
-                            Toast.makeText(SignIn.this, "Unable to sign in", Toast.LENGTH_SHORT).show();
-                        }
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful() && task.getResult() != null && task.getResult().getDocuments().size() > 0) {
+                        DocumentSnapshot documentSnapshot = task.getResult().getDocuments().get(0);
+                        preferenceManager.putBoolean(Constants.KEY_IS_SIGNED_IN, true);
+                        preferenceManager.putString(Constants.KEY_USER_ID, documentSnapshot.getId());
+                        preferenceManager.putString(Constants.KEY_FIRST_NAME, documentSnapshot.getString(Constants.KEY_FIRST_NAME));
+                        preferenceManager.putString(Constants.KEY_LAST_NAME, documentSnapshot.getString(Constants.KEY_LAST_NAME));
+                        preferenceManager.putString(Constants.KEY_EMAIL, documentSnapshot.getString(Constants.KEY_EMAIL));
+                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(intent);
+                    } else {
+                        signinprogress.setVisibility(View.INVISIBLE);
+                        buttonSignIn.setVisibility(View.VISIBLE);
+                        Toast.makeText(SignIn.this, "Unable to sign in", Toast.LENGTH_SHORT).show();
                     }
                 });
-
     }
 }

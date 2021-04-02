@@ -146,7 +146,7 @@
                         android:textSize="@dimen/_12ssp" />
 
                     <EditText
-                        android:id="@+id/inputEmail"
+                        android:id="@+id/inputEmailsignup"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_30sdp"
                         android:layout_marginStart="@dimen/_8sdp"
@@ -175,7 +175,7 @@
                         android:textSize="@dimen/_12ssp" />
 
                     <EditText
-                        android:id="@+id/inputPassword"
+                        android:id="@+id/inputPasswordsignup"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_30sdp"
                         android:layout_marginStart="@dimen/_8sdp"

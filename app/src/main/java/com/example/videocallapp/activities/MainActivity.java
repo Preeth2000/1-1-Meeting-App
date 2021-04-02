@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity implements UserListener {
                                 user.token = documentSnapshot.getString(Constants.KEY_FCM_TOKEN);
                                 users.add(user);
                             }
-                            if(users.size()>0) {
+                            if(users.size()<0) {
                                 userAdapter.notifyDataSetChanged();
                                 errormessage.setText(String.format("%s", "No current users"));
                                 errormessage.setVisibility(View.VISIBLE);
@@ -186,7 +186,7 @@ public class MainActivity extends AppCompatActivity implements UserListener {
     @Override
     public void initiatevideocall(User user) {
         if(user.token == null || user.token.trim().isEmpty()) {
-            Toast.makeText(this, user.firstname + "" + user.lastname + "is unavailable", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, user.firstname + " " + user.lastname + "is unavailable", Toast.LENGTH_SHORT).show();
         }else {
             Toast.makeText(this, "Starting Video Call with" + user.firstname + "" + user.lastname, Toast.LENGTH_SHORT).show();
 
@@ -196,7 +196,7 @@ public class MainActivity extends AppCompatActivity implements UserListener {
     @Override
     public void initiateaudiocall(User user) {
         if(user.token == null || user.token.trim().isEmpty()) {
-            Toast.makeText(this, user.firstname + "" + user.lastname + "is unavailable", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, user.firstname + " " + user.lastname + "is unavailable", Toast.LENGTH_SHORT).show();
         }else {
             Toast.makeText(this, "Starting Call with " + user.firstname + "" + user.lastname, Toast.LENGTH_SHORT).show();
 

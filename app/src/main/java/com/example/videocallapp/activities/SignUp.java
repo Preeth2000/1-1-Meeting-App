@@ -50,8 +50,8 @@ public class SignUp extends AppCompatActivity {
 
         inputFirstName       = findViewById(R.id.inputFirstName);
         inputLastName        = findViewById(R.id.inputLastName);
-        inputEmail           = findViewById(R.id.inputEmail);
-        inputPassword        = findViewById(R.id.inputPassword);
+        inputEmail           = findViewById(R.id.inputEmailsignup);
+        inputPassword        = findViewById(R.id.inputPasswordsignup);
         inputConfirmPassword = findViewById(R.id.inputConfirmPassword);
         buttonSignUp         = findViewById(R.id.buttonSignUp);
         signupprogress       = findViewById(R.id.signupprogress);
