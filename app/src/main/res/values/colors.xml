@@ -16,5 +16,8 @@
     <color name="texticon">#FFFFFF</color>
     <color name="background">#FAFAFA</color>
     <color name="hinttext">#BDBDBD</color>
+    <color name="callstart">#4004BB</color>
+    <color name="callend">#8A1AAA</color>
+
     //Replace hintext with divider after done
 </resources>
