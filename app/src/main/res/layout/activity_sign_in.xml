@@ -9,13 +9,13 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:id="@+id/layoutHeader"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_150sdp"
-            android:background="@color/primary"
+            android:background="@color/primaryDark"
             android:gravity="center"
             android:orientation="vertical"
             app:layout_constraintTop_toTopOf="parent">
@@ -25,9 +25,9 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/ubuntu_bold"
                 android:includeFontPadding="false"
-                android:text="@string/welcome"
-                android:textColor="@color/texticon"
-                android:textSize="@dimen/_16ssp"/>
+                android:text="@string/welcome_to_the"
+                android:textColor="@color/whiteText"
+                android:textSize="@dimen/_16ssp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -35,34 +35,34 @@
                 android:layout_marginTop="@dimen/_4sdp"
                 android:fontFamily="@font/ubuntu_bold"
                 android:includeFontPadding="false"
-                android:text="@string/app_name"
-                android:textColor="@color/texticon"
-                android:textSize="@dimen/_16ssp"/>
+                android:text="@string/_1_to_1_meeting_application"
+                android:textColor="@color/whiteText"
+                android:textSize="@dimen/_16ssp" />
         </LinearLayout>
 
         <TextView
-            android:id="@+id/signin"
+            android:id="@+id/signInHeader"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_20sdp"
             android:fontFamily="@font/ubuntu_regular"
             android:includeFontPadding="false"
-            android:text="@string/sign_in"
-            android:textColor="@color/primary"
+            android:text="@string/sign_in_below"
+            android:textColor="@color/primaryText"
             android:textSize="@dimen/_15ssp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/layoutHeader"/>
+            app:layout_constraintTop_toBottomOf="@id/layoutHeader" />
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/signincard"
+            android:id="@+id/signInCardView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_20sdp"
             android:layout_marginTop="@dimen/_20sdp"
             android:layout_marginEnd="@dimen/_20sdp"
             app:cardCornerRadius="@dimen/_4sdp"
-            app:layout_constraintTop_toBottomOf="@+id/signin">
+            app:layout_constraintTop_toBottomOf="@id/signInHeader">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -79,26 +79,24 @@
                     android:fontFamily="@font/ubuntu_regular"
                     android:includeFontPadding="false"
                     android:text="@string/email"
-                    android:textColor="@color/primary"
-                    android:textSize="@dimen/_11ssp"/>
+                    android:textColor="@color/primaryText"
+                    android:textSize="@dimen/_11ssp" />
 
                 <EditText
-                    android:id="@+id/inputEmailsignin"
+                    android:id="@+id/inputEmail"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_30sdp"
                     android:layout_marginStart="@dimen/_8sdp"
                     android:layout_marginEnd="@dimen/_8sdp"
                     android:background="@null"
                     android:fontFamily="@font/ubuntu_regular"
-                    android:hint="@string/exampleemail"
+                    android:hint="@string/john_smith_example_com"
                     android:imeOptions="actionNext"
                     android:importantForAutofill="no"
                     android:includeFontPadding="false"
                     android:inputType="textEmailAddress"
-                    android:textColor="@color/primary"
-                    android:textColorHint="@color/hinttext"
-                    android:textSize="@dimen/_13ssp"/>
-
+                    android:textColorHint="@color/hintText"
+                    android:textSize="@dimen/_13ssp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -109,11 +107,11 @@
                     android:fontFamily="@font/ubuntu_regular"
                     android:includeFontPadding="false"
                     android:text="@string/password"
-                    android:textColor="@color/primary"
-                    android:textSize="@dimen/_11ssp"/>
+                    android:textColor="@color/primaryText"
+                    android:textSize="@dimen/_11ssp" />
 
                 <EditText
-                    android:id="@+id/inputPasswordsignin"
+                    android:id="@+id/inputPassword"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_30sdp"
                     android:layout_marginStart="@dimen/_8sdp"
@@ -121,22 +119,20 @@
                     android:layout_marginBottom="@dimen/_8sdp"
                     android:background="@null"
                     android:fontFamily="@font/ubuntu_regular"
-                    android:hint="@string/examplepassword"
+                    android:hint="@string/password_hint"
                     android:imeOptions="actionDone"
                     android:importantForAutofill="no"
                     android:includeFontPadding="false"
                     android:inputType="textPassword"
-                    android:textColor="@color/primary"
-                    android:textColorHint="@color/hinttext"
-                    android:textSize="@dimen/_13ssp"/>
-
+                    android:textColorHint="@color/hintText"
+                    android:textSize="@dimen/_13ssp" />
 
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/signinbutton"
+            android:id="@+id/signInButton"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_40sdp"
             android:layout_marginStart="@dimen/_20sdp"
@@ -145,49 +141,47 @@
             android:fontFamily="@font/ubuntu_bold"
             android:includeFontPadding="false"
             android:text="@string/sign_in"
-            android:textColor="@color/texticon"
+            android:textColor="@color/whiteText"
             android:textSize="@dimen/_13ssp"
-            app:layout_constraintTop_toBottomOf="@+id/signincard" />
+            app:layout_constraintTop_toBottomOf="@id/signInCardView" />
 
         <ProgressBar
-            android:id="@+id/signinprogress"
+            android:id="@+id/signInProgress"
             android:layout_width="@dimen/_25sdp"
             android:layout_height="@dimen/_25sdp"
             android:visibility="invisible"
-            app:layout_constraintBottom_toBottomOf="@+id/signinbutton"
-            app:layout_constraintEnd_toEndOf="@+id/signinbutton"
-            app:layout_constraintStart_toStartOf="@id/signinbutton"
-            app:layout_constraintTop_toTopOf="@+id/signinbutton"/>
-
+            app:layout_constraintBottom_toBottomOf="@+id/signInButton"
+            app:layout_constraintEnd_toEndOf="@id/signInButton"
+            app:layout_constraintStart_toStartOf="@id/signInButton"
+            app:layout_constraintTop_toTopOf="@id/signInButton"/>
 
         <TextView
-            android:id="@+id/register"
+            android:id="@+id/noAccountLabel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_20sdp"
             android:fontFamily="@font/ubuntu_regular"
             android:gravity="center"
             android:includeFontPadding="false"
-            android:text="@string/registertext"
-            android:textColor="@color/primary"
+            android:text="@string/don_t_have_an_account"
+            android:textColor="@color/primaryText"
             android:textSize="@dimen/_13ssp"
-            app:layout_constraintTop_toBottomOf="@+id/signinbutton" />
+            app:layout_constraintTop_toBottomOf="@id/signInButton"/>
 
         <TextView
-            android:id="@+id/signupbutton"
+            android:id="@+id/signUpRouter"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/_20sdp"
-            android:fontFamily="@font/ubuntu_regular"
+            android:fontFamily="@font/ubuntu_bold"
             android:gravity="center"
             android:includeFontPadding="false"
             android:padding="@dimen/_6sdp"
-            android:text="@string/signupbutton"
-            android:textAllCaps="true"
+            android:text="@string/sign_up"
             android:textColor="@color/accent"
             android:textSize="@dimen/_14ssp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/register"/>
+            app:layout_constraintTop_toBottomOf="@id/noAccountLabel"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
