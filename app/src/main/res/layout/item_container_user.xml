@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="@dimen/_5sdp">
+
+    <View
+        android:id="@+id/iconBox"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        app:layout_constraintBottom_toBottomOf="@id/profileIcon"
+        app:layout_constraintStart_toEndOf="@id/profileIcon"
+        app:layout_constraintTop_toTopOf="@id/profileIcon"/>
+
+    <ImageView
+        android:id="@+id/profileIcon"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:contentDescription="@string/app_name"
+        android:padding="@dimen/_2sdp"
+        android:src="@drawable/ic_profile_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/userDivider"
+        app:tint="@color/primary" />
+
+    <ImageView
+        android:id="@+id/videoCallButton"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:contentDescription="@string/app_name"
+        android:padding="@dimen/_2sdp"
+        android:src="@drawable/ic_video"
+        app:layout_constraintBottom_toTopOf="@id/userDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/primary" />
+    <ImageView
+        android:id="@+id/audioCallButton"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:contentDescription="@string/app_name"
+        android:padding="@dimen/_2sdp"
+        android:src="@drawable/ic_audio"
+        app:layout_constraintBottom_toTopOf="@id/userDivider"
+        app:layout_constraintEnd_toStartOf="@id/videoCallButton"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/primary" />
+    <TextView
+        android:id="@+id/nameText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:ellipsize="end"
+        android:fontFamily="@font/ubuntu_medium"
+        android:includeFontPadding="false"
+        android:maxLines="1"
+        android:textColor="@color/primaryText"
+        android:textSize="@dimen/_13ssp"
+        app:layout_constraintBottom_toTopOf="@id/iconBox"
+        app:layout_constraintEnd_toStartOf="@id/audioCallButton"
+        app:layout_constraintStart_toEndOf="@id/profileIcon"/>
+    <TextView
+        android:id="@+id/emailText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:ellipsize="end"
+        android:fontFamily="@font/ubuntu_regular"
+        android:includeFontPadding="false"
+        android:maxLines="1"
+        android:textColor="@color/secondaryText"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintEnd_toStartOf="@id/audioCallButton"
+        app:layout_constraintStart_toEndOf="@id/profileIcon"
+        app:layout_constraintTop_toBottomOf="@id/iconBox"/>
+
+    <View
+        android:id="@+id/userDivider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:background="@color/divider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/profileIcon"
+        app:layout_constraintTop_toBottomOf="@+id/profileIcon"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

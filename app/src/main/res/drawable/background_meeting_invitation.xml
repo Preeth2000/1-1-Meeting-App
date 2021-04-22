@@ -4,6 +4,6 @@
 
     <gradient
         android:angle="270"
-        android:startColor="@color/callstart"
-        android:endColor="@color/callend"/>
+        android:startColor="@color/callTop"
+        android:endColor="@color/callBottom"/>
 </shape>
