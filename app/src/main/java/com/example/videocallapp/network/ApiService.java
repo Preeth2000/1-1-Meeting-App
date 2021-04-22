@@ -7,12 +7,12 @@ import retrofit2.http.Body;
 import retrofit2.http.HeaderMap;
 import retrofit2.http.POST;
 
-public interface APIService {
+//Sends data to API in the structure we want
+public interface ApiService {
 
     @POST("send")
-    Call<String> sendremotemessage(
+    Call<String> sendRemoteMessage(
             @HeaderMap HashMap<String, String> headers,
-            @Body String remotebody
-        );
-
+            @Body String remoteBody
+    );
 }
