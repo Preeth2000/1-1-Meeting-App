@@ -50,6 +50,7 @@ public class SignIn extends AppCompatActivity {
             finish();
         }
 
+        /*
         //Adding a test user to database
         //User added on application start up
         //Adding all required user information
@@ -66,14 +67,14 @@ public class SignIn extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
-                        Log.d("SUS", "User successfully logged in ");
+                        Log.d("SIGNUSERSTATE", "User successfully added to database ");
                     }
                 })
                 //If data is not added to database, logcat will output that the test is a failure
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Log.d("SUS", "Unable to add User");
+                        Log.d("SIGNUSERSTATE", "Unable to add User");
                     }
                 });
 
@@ -91,13 +92,17 @@ public class SignIn extends AppCompatActivity {
                         //Checks if user is successfully found and that some value has been found in database
                         if (task.isSuccessful() && task.getResult() != null && task.getResult().getDocuments().size() > 0) {
                             //If user is found, then they can be logged in which will then be output in logcat
-                            Log.d("SIS", "User successfully logged in ");
+                            Log.d("SIGNINSTATE", "User successfully logged in ");
                         }else {
                             //If user cannot be found then they cannot be logged in which will be output in logcat
-                            Log.d("SIS", "User cannot be logged in ");
+                            Log.d("SIGNINSTATE", "User cannot be logged in ");
                         }
                     }
                 });
+
+         */
+
+
 
         //Waits for user to click on sign up button. When pressed, redirects user to sigh up activity page
         findViewById(R.id.signUpRouter).setOnClickListener(new View.OnClickListener() {

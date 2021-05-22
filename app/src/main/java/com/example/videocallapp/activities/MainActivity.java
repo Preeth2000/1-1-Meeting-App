@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity implements UsersListener {
                                 user.email = documentSnapshot.getString(Constants.KEY_EMAIL);
                                 user.token = documentSnapshot.getString(Constants.KEY_FCM_TOKEN);
                                 users.add(user);
-                                Log.d("USA", "User: " + " " + user + " " + user.firstName + " " + user.lastName + " " + user.email + " " + "token: " + user.token);
+                                Log.d("USERSDATALOCAL", "User: " + " " + user + " " + user.firstName + " " + user.lastName + " " + user.email + " " + "token: " + user.token);
                             }
                             if (users.size() > 0) {
                                 usersAdapter.notifyDataSetChanged();
